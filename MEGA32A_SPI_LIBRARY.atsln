@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "MEGA32A_SPI_LIBRARY", "MEGA32A_SPI_LIBRARY\MEGA32A_SPI_LIBRARY.cppproj", "{7FF38634-C597-44D8-9920-7A97FFAB6281}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FF38634-C597-44D8-9920-7A97FFAB6281}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7FF38634-C597-44D8-9920-7A97FFAB6281}.Debug|AVR.Build.0 = Debug|AVR
+		{7FF38634-C597-44D8-9920-7A97FFAB6281}.Release|AVR.ActiveCfg = Release|AVR
+		{7FF38634-C597-44D8-9920-7A97FFAB6281}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
