@@ -9,11 +9,11 @@
 
 void InitSPI(void) {
 	//Clear port B SPI pins for init
-	DDRB &= ~((1<<DDRB6));
+	DDRB &= ~_BV(6); // MISO input
 	
 	//Set SCK (PB7), MOSI (PB5) , SS (PB4)  as outport
 	//OBS!!! Has to be set before SPI-Enable below
-	DDRB |= (1<<DDRB7) | (1<<DDRB5) | (1<<DDRB4);
+	DDRB |= _BV(7) | _BV(5) | _BV(4);
 	
 	// Enable SPI, Master, set clock rate fck/16 .. clock rate not to important..
 	//SPCR |= (1<<SPE)|(1<<MSTR) |(1<<SPR0); // |(1<<SPR1);
@@ -26,7 +26,7 @@ void InitSPI(void) {
 	(0<<CPOL)|              // Clock Polarity (0:SCK low / 1:SCK hi when idle)
 	(0<<CPHA));             // Clock Phase (0:leading / 1:trailing edge sampling)
 	
-	SPSR |= (1<<SPI2X);
+	SPSR |= (1<<SPI2X); // operate at clk/2
 }
 
 //Sends and receives a byte through SPI
