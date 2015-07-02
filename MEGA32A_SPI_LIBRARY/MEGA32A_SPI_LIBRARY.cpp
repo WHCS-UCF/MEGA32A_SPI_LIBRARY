@@ -8,6 +8,14 @@
 #include <avr/io.h>
 
 void InitSPI(void) {
+#if defined(__AVR_ATmega328P__)
+	//Clear port B SPI pins for init
+	DDRB &= ~_BV(4); // MISO input
+	
+	//Set SCK (PB5), MOSI (PB3) , SS (PB2)  as outport
+	//OBS!!! Has to be set before SPI-Enable below
+	DDRB |= _BV(5) | _BV(3) | _BV(2);
+#elif defined(__AVR_ATmega32__)
 	//Clear port B SPI pins for init
 	DDRB &= ~_BV(6); // MISO input
 	
@@ -15,6 +23,7 @@ void InitSPI(void) {
 	//OBS!!! Has to be set before SPI-Enable below
 	DDRB |= _BV(7) | _BV(5) | _BV(4);
 	
+#endif
 	// Enable SPI, Master, set clock rate fck/16 .. clock rate not to important..
 	//SPCR |= (1<<SPE)|(1<<MSTR) |(1<<SPR0); // |(1<<SPR1);
 	
