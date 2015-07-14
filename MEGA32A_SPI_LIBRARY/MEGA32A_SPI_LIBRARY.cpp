@@ -22,7 +22,8 @@ void InitSPI(void) {
 	//Set SCK (PB7), MOSI (PB5) , SS (PB4)  as outport
 	//OBS!!! Has to be set before SPI-Enable below
 	DDRB |= _BV(7) | _BV(5) | _BV(4);
-	
+#else
+#error "SPI library does not support the requested board"
 #endif
 	// Enable SPI, Master, set clock rate fck/16 .. clock rate not to important..
 	//SPCR |= (1<<SPE)|(1<<MSTR) |(1<<SPR0); // |(1<<SPR1);
